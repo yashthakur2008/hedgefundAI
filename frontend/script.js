@@ -126,7 +126,11 @@ form.addEventListener("submit", async (event) => {
 
   submitBtn.disabled = true;
   resultsEl.innerHTML = "";
-  setStatus("— running the desk (this can take a moment on a cold start) —");
+  setStatus(
+    "— running the desk: specialists, then a " +
+      rounds +
+      "-round debate, then the judge — this can take a while, especially on a cold start —"
+  );
 
   try {
     const response = await fetch("/api/analyze", {
